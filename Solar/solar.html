@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Solar System - Full</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene>
+
+  <!-- TEXTURES -->
+  <a-assets>
+    <img id="sun" src="sun.jpg">
+    <img id="earth" src="earth.jpg">
+    <img id="mars" src="mars.jpg">
+    <img id="jupiter" src="jupiter.jpg">
+    <img id="saturn" src="saturn.jpg">
+    <img id="stars" src="stars.jpg">
+  </a-assets>
+
+  <!-- CAMERA -->
+  <a-entity position="0 2 10">
+    <a-camera wasd-controls look-controls></a-camera>
+  </a-entity>
+
+  <!-- LIGHT -->
+  <a-light type="ambient" intensity="0.5"></a-light>
+  <a-light type="point" position="0 5 5"></a-light>
+
+  <!-- BACKGROUND STARS -->
+  <a-sky src="#stars"></a-sky>
+
+  <!-- SUN -->
+  <a-sphere src="#sun"
+  position="0 1.5 -5"
+  radius="1.5"
+  material="emissive: #ffffff; emissiveIntensity: 0.05">
+  </a-sphere>
+
+  <!-- EARTH -->
+  <a-entity position="0 1.5 -5"
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+    <a-sphere src="#earth"
+      position="3 0 0"
+      radius="0.4"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 2000">
+    </a-sphere>
+  </a-entity>
+
+  <!-- MARS -->
+  <a-entity position="0 1.5 -5"
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 8000">
+    <a-sphere src="#mars"
+      position="4 0 0"
+      radius="0.3">
+    </a-sphere>
+  </a-entity>
+
+  <!-- JUPITER -->
+  <a-entity position="0 1.5 -5"
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 12000">
+    <a-sphere src="#jupiter"
+      position="6 0 0"
+      radius="0.9">
+    </a-sphere>
+  </a-entity>
+
+  <!-- SATURN -->
+  <a-entity position="0 1.5 -5"
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
+    <a-sphere src="#saturn"
+      position="8 0 0"
+      radius="0.7">
+    </a-sphere>
+  </a-entity>
+
+</a-scene>
+</body>
+</html>

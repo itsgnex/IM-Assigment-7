@@ -16,7 +16,12 @@
 			
 			this.toggleColor = function() { // adding a method
 				
-				el.setAttribute('color','orange');
+				let currentColor = el.getAttribute('color');
+				if (currentColor === 'orange') {
+				el.setAttribute('color', 'red');
+				} else {
+				el.setAttribute('color', 'orange');
+				}
 				
 				console.log("toggleColor event");
 				alert("clicked");
